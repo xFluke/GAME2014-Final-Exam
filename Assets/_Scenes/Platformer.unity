@@ -4504,7 +4504,7 @@ GameObject:
   - component: {fileID: 658286206}
   m_Layer: 8
   m_Name: Shrinking Platform
-  m_TagString: Moving Platform
+  m_TagString: Shrinking Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4521,8 +4521,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d493989be48b364aa64a5e4ff99ebbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 0.0001
+  moveSpeed: 0.001
   maxMoveDistance: 0.1
+  isActive: 0
+  shrinkSpeed: 0.001
 --- !u!61 &658286207
 BoxCollider2D:
   m_ObjectHideFlags: 0
