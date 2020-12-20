@@ -14,6 +14,9 @@ public class ShrinkingPlatformController : MonoBehaviour
     public bool isActive = false;
     public float shrinkSpeed;
 
+    [SerializeField]
+    AudioSource shrinkingSound;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +30,12 @@ public class ShrinkingPlatformController : MonoBehaviour
         Float();
 
         if (isActive) {
+            // Shrinking
+            if (!shrinkingSound.isPlaying) {
+                shrinkingSound.Play();
+            }
+
+
             if (transform.localScale.x > 0) {
                 transform.localScale -= new Vector3(shrinkSpeed, 0, 0);
             }
@@ -35,6 +44,9 @@ public class ShrinkingPlatformController : MonoBehaviour
             }
         }
         else {
+            // Growing
+
+
             if (transform.localScale.x < startingLocalScale.x)
                 transform.localScale += new Vector3(shrinkSpeed, 0, 0);
             else
